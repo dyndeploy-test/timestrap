@@ -1,0 +1,6 @@
+deployments:
+  default:
+    post_launch:
+      - target: 'web'
+        command: exec
+        options: 'python3 manage.py migrate --settings=timestrap.settings.docker'
