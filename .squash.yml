@@ -3,5 +3,4 @@ deployments:
     post_launch:
       - target: code_web_1
         command: exec
-        options: {target} python3 manage.py migrate --settings=timestrap.settings.docker
-        delay: 30
+        options: {target} bash -c "sleep 30 && python3 manage.py migrate --settings=timestrap.settings.docker"
