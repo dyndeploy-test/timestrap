@@ -1,6 +1,7 @@
 deployments:
   default:
     post_launch:
-      - target: 'web_1'
+      - target: code_web_1
         command: exec
-        options: 'web_1 python3 manage.py migrate --settings=timestrap.settings.docker'
+        options: {target} python3 manage.py migrate --settings=timestrap.settings.docker
+        delay: 30
